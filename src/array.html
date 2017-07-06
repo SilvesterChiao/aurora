@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <title>数组</title>
+</head>
+<body>
+    
+
+    <!-- bower:js -->
+    <!-- endbower -->
+    <script>
+        // 创建数组
+        var numbers = [];
+        console.log(numbers.length);
+        var days = new Array(1, 2, 3, 4, 5);
+        var coloes = new Array(10);
+
+        // 读写数组
+
+        var nums = [];
+        for(var i = 0; i < 100; ++ i){
+            nums[i] = i + 1;
+        }
+
+        // 由字符串生成数组
+        var sentence = 'the quick brown fox jumped over the lazy dog';
+        var words = sentence.split(' ');
+        for(var j = 0; j < words.length; ++ j){
+            console.log('word' + j + ': ' + words[j]);
+        }
+
+        // 对数组的整体性操作
+
+        // 存取函数
+        // 查找元素 indexOf
+        var names = ['Emily', '凯瑟琳', '埃琳娜', '卡洛琳']
+        var name = '凯瑟琳'
+        var position = names.indexOf(name)
+        if(position >= 0){
+            console.log('Found ' + name + ' at position ' + position)
+        }else{
+            console.log(name + ' not found in array.')
+        }
+    </script>
+</body>
+</html>

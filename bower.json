@@ -1,0 +1,35 @@
+{
+  "name": "gulp-empty",
+  "description": "gulp",
+  "main": "index.js",
+  "authors": [
+    "Silvester"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp",
+    "learn"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "mustache.js": "^2.3.0",
+    "animate.css": "^3.5.2"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}
