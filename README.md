@@ -1,6 +1,6 @@
 # aururi
 
-北极光
+gulp + bower + Bootstrap + jQuery + mustache.js + animate.css
 
 ## gulp
 
