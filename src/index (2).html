@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result">
+
+    </div>
+
+    <p style="display: none;">
+        <textarea name="result-template" id="result-template">
+            {$T.name}
+        </textarea>
+    </p>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery-jtemplates.js"></script>
+    <script>
+        var data = {
+            name: "user-list",
+            list_id: 4,
+            table: [
+                {
+                    id: 1,
+                    name: "Anne",
+                    age: 20,
+                    mail: "anne@domain.com"
+                },
+                {
+                    id: 2,
+                    name: "Amelie",
+                    age: 18,
+                    mail: "amelie@domain.com"
+                },
+                {
+                    id: 3,
+                    name: "Polly",
+                    age: 22,
+                    mail: "polly@domain.com"
+                },
+                {
+                    id: 4,
+                    name: "Alice",
+                    age: 25,
+                    mail: "alice@domain.com"
+                },
+                {
+                    id: 5,
+                    name: "Martha",
+                    age: 26,
+                    mail: "martha@domain.com"
+                }
+
+            ]
+        }
+
+        $(function(){
+            $('#result').setTemplateElement('result-template');
+            $('#result').processTemplate(data);
+        })
+    </script>
+</body>
+</html>

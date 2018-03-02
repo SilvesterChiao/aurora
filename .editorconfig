@@ -1,0 +1,31 @@
+# 这里表示注释
+; 注释也可以用分号
+# 斜(/)线表示路径分隔符
+
+# 通配符
+# *                匹配除/之外的任意字符串
+# **               匹配任意字符串
+# ?                匹配任意单个字符
+# [name]           匹配name中的任意一个单一字符
+# [!name]          匹配不存在name中的任意一个单一字符
+# {s1,s2,s3}       匹配给定的字符串中的任意一个(用逗号分隔)
+# {num1..num2}   　匹配num1到num2之间的任意一个整数, 这里的num1和num2可以为正整数也可以为负整数
+
+root = true
+
+[*]
+# 文件编码
+charset = utf-8
+# 缩进类型
+indent_style = space
+# 缩进数量
+indent_size = 2
+# 换行符格式
+end_of_line = lf
+# 文件最后插入空行
+insert_final_newline = true
+# 删除行尾空格
+trim_trailing_whitespace = true
+
+[*.md]
+trim_trailing_whitespace = false
