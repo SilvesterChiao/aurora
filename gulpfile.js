@@ -1,4 +1,21 @@
 /**
+ * Author: Silvester
+ */
+
+ /**
+  * 任务列表
+  * 编译/压缩sass,jade,es6
+  * browserSync
+  * build
+  * 字体图片处理
+  * 自动引入第三方
+  * css/js语法检查
+  * 自动前缀
+  * 合并,md5,替换路径
+  * mock,测试
+  */
+
+/**
 * browser-sync
 * gulp-load-plugins
 * gulp-uglify
@@ -24,6 +41,12 @@ const { reload } = browserSync;
 // 自定义任务
 gulp.task('hello', () => {
   console.log($);
+});
+
+// 清除
+gulp.task('clean', function(){
+    return gulp.src('./dist/**/*')
+                .pipe($.clean())
 });
 
 // 清除 html
@@ -75,12 +98,12 @@ gulp.task('minify-css', () => {
 });
 
 // css 文件 md5 签名
-gulp.task('revcss', () => {
-  return gulp.src('./src/css/*.css')
-    .pipe($.rev())
-    .pipe(gulp.dest('./dist/css'))
-    .pipe($.rev.manifest())
-    .pipe(gulp.dest('./dist/rev'));
+gulp.task('revcss', function(){
+  return gulp.src('./src/styles/*.css')
+      .pipe($.rev())
+      .pipe(gulp.dest('./dist/css'))
+      .pipe($.rev.manifest())
+      .pipe(gulp.dest('./dist/rev/css'))
 });
 
 // 替换 md5 签名路径
@@ -89,6 +112,18 @@ gulp.task('rev', () => {
     .pipe($.revCollector())
     .pipe(gulp.dest('./dist'));
 });
+
+// 替换 md5 签名路径
+gulp.task('html', function(){
+    var cssFilter = $.filter("**/*.css");
+    var jsFilter = $.filter("**/*.js");
+
+	return gulp.src('./src/**/*.html')
+            .pipe($.useref())
+            .pipe($.if('*.js', $.uglify()), $.rev())
+            .pipe($.if('*.css', $.cleanCss()))
+			.pipe(gulp.dest('./dist'))
+})
 
 // 清除 js
 gulp.task('cleanScriptFile', () => {
@@ -123,7 +158,9 @@ gulp.task('uglify', () => {
 gulp.task('revjs', () => {
   return gulp.src('./src/scripts/*.js')
     .pipe($.rev())
-    .pipe(gulp.dest('./dist/js'));
+    .pipe(gulp.dest('./dist/js'))
+    .pipe($.rev.manifest())
+    .pipe(gulp.dest('./dest/rev'));
 });
 
 // 清除图片
