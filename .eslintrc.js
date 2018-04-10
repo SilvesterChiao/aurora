@@ -8,6 +8,7 @@ module.exports = {
     "rules": {
       // "linebreak-style": ["error", "windows"],
       "no-path-concat": 1,
-      "prefer-template": 1
+      "prefer-template": 1,
+      "arrow-body-style": 1
     }
 };
