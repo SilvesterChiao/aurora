@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <!-- endbower -->
     <title>数组</title>
 </head>
+
 <body>
-    
+
 
     <!-- bower:js -->
     <!-- endbower -->
@@ -23,14 +25,14 @@
         // 读写数组
 
         var nums = [];
-        for(var i = 0; i < 100; ++ i){
+        for (var i = 0; i < 100; ++i) {
             nums[i] = i + 1;
         }
 
         // 由字符串生成数组
         var sentence = 'the quick brown fox jumped over the lazy dog';
         var words = sentence.split(' ');
-        for(var j = 0; j < words.length; ++ j){
+        for (var j = 0; j < words.length; ++j) {
             console.log('word' + j + ': ' + words[j]);
         }
 
@@ -41,11 +43,12 @@
         var names = ['Emily', '凯瑟琳', '埃琳娜', '卡洛琳']
         var name = '凯瑟琳'
         var position = names.indexOf(name)
-        if(position >= 0){
+        if (position >= 0) {
             console.log('Found ' + name + ' at position ' + position)
-        }else{
+        } else {
             console.log(name + ' not found in array.')
         }
     </script>
 </body>
+
 </html>
