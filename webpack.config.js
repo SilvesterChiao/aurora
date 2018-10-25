@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     // 单个入口(简写)语法
     entry: `${__dirname}/src/scripts/index.js`,
@@ -15,14 +17,15 @@ module.exports = {
     //     vendors: 'src/scripts/vendors.js'
     // },
     output: {
-        path: `${__dirname}/public`,
+        // path: `${__dirname}/public`,
+        path: path.resolve(__dirname, 'public'),
         filename: '[name].js',
     },
     module: {
         rules: [
             {
                 test: /\.scss$/,
-                loaders: ['style-loader', 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.js$/,
@@ -30,5 +33,8 @@ module.exports = {
                 loader: 'babel-loader',
             },
         ],
+    },
+    devServer: {
+        open: true,
     },
 };
