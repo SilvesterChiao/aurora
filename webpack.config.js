@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
     // 单个入口(简写)语法
-    entry: `${__dirname}/src/scripts/index.js`,
+    entry: `${__dirname}/app/scripts/index.js`,
     // entry: {
     //     main: __dirname + '/src/scripts/index.js'
     // },
